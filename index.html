@@ -97,6 +97,7 @@
     <script>
         let isDarkMode = false;
         const website = "ReefPointGroup.com";
+        const linkedInURL = "https://www.linkedin.com/company/reefpointgroup/mycompany/";
 
         function generateSignature() {
             const fname = document.getElementById('fname').value;
@@ -123,9 +124,9 @@
                     <div class="contact-info">
                         <p>${phone}</p>
                         <div class="icons">
-                            <img src="${linkedinSrc}" alt="LinkedIn"> 
-                            <img src="${webSrc}" alt="Web"> 
-                            <a href="https://${website}">${website}</a>
+                            <a href="${linkedInURL}" target="_blank"><img src="${linkedinSrc}" alt="LinkedIn"></a> 
+                            <a href="https://www.${website}" target="_blank"><img src="${webSrc}" alt="Web"></a> 
+                            <a href="https://${website}" target="_blank">${website}</a>
                         </div>
                     </div>
                     <div class="footer">
