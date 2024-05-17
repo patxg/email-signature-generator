@@ -12,7 +12,7 @@
         .signature {
             border: 1px solid #000;
             padding: 10px;
-            width: 600px;
+            width: 800px; /* Adjust width as needed */
             background-color: #fff;
             color: #000;
         }
@@ -39,31 +39,52 @@
             align-items: center;
         }
         .header .logo {
+            flex: 1;
             margin-right: 20px;
         }
         .header img {
-            height: 100px; /* Adjust the height as needed */
+            height: 120px; /* Adjust height as needed */
         }
         .content {
-            display: flex;
-            flex-direction: column;
+            flex: 2;
+        }
+        .content h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .content h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .content h3 {
+            font-size: 16px;
+            margin: 0;
+        }
+        .content h4 {
+            font-size: 14px;
+            margin: 0;
         }
         .contact-info {
             margin-top: 10px;
         }
         .contact-info p {
             margin: 5px 0;
+            font-size: 16px; /* Font size H3 */
         }
         .icons img {
-            height: 20px;
+            height: 30px;
             margin-right: 10px;
         }
         .icons a {
             color: inherit;
             text-decoration: none;
+            font-size: 18px; /* Font size H2 */
         }
         .footer img {
-            height: 50px;
+            height: 60px;
+        }
+        .footer p {
+            font-size: 24px; /* Font size H1 */
         }
     </style>
 </head>
@@ -107,7 +128,7 @@
             const pronouns = document.getElementById('pronouns').value;
             const phone = document.getElementById('phone').value;
 
-            const pronounsHTML = pronouns ? `<p>${pronouns}</p>` : '';
+            const pronounsHTML = pronouns ? `<h4>${pronouns}</h4>` : '';
 
             const linkedinSrc = isDarkMode ? 'assets/linkedin_dark.png' : 'assets/linkedin_light.png';
             const webSrc = isDarkMode ? 'assets/web_dark.png' : 'assets/web_light.png';
@@ -119,10 +140,10 @@
                             <img src="assets/logo.png" alt="Company Logo">
                         </div>
                         <div class="content">
-                            <p><strong>${fname} ${lname}</strong></p>
-                            <p>${title}</p>
+                            <h1>${fname} ${lname}</h1>
+                            <h3>${title}</h3>
                             ${pronounsHTML}
-                            <p>${phone}</p>
+                            <h3>${phone}</h3>
                             <div class="icons">
                                 <a href="${linkedInURL}" target="_blank"><img src="${linkedinSrc}" alt="LinkedIn"></a> 
                                 <a href="https://www.${website}" target="_blank"><img src="${webSrc}" alt="Web"></a> 
