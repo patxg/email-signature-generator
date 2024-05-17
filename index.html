@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .signature {
+            border: 1px solid #000;
+            padding: 10px;
+            width: fit-content;
+            background-color: #fff;
+            color: #000;
+        }
+        .dark-mode .signature {
+            background-color: #000;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        #download-link {
+            display: none;
+            margin-top: 10px;
+        }
+        .signature img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Signature Generator</h1>
+    <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname">
+    </div>
+    <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname">
+    </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title">
+    </div>
+    <div class="form-group">
+        <label for="pronouns">Pronouns</label>
+        <input type="text" id="pronouns">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone">
+    </div>
+    <div class="form-group">
+        <label for="website">Website</label>
+        <input type="text" id="website" value="ReefPointGroup.com">
+    </div>
+    <button onclick="generateSignature()">Generate Signature</button>
+    <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    <a id="download-link" download="signature.html">Download Signature</a>
+    
+    <div id="signature-container"></div>
+
+    <script>
+        let isDarkMode = false;
+
+        function generateSignature() {
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const title = document.getElementById('title').value;
+            const pronouns = document.getElementById('pronouns').value;
+            const phone = document.getElementById('phone').value;
+            const website = document.getElementById('website').value;
+
+            const pronounsHTML = pronouns ? `<p>${pronouns}</p>` : '';
+
+            const linkedinSrc = isDarkMode ? 'assets/linkedin_dark.png' : 'assets/linkedin_light.png';
+            const webSrc = isDarkMode ? 'assets/web_dark.png' : 'assets/web_light.png';
+
+            const signatureHTML = `
+                <div class="signature">
+                    <img src="assets/logo.png" alt="Company Logo" style="height:50px;"><br>
+                    <p><strong>${fname} ${lname}</strong></p>
+                    <p>${title}</p>
+                    ${pronounsHTML}
+                    <p>${phone}</p>
+                    <p><img src="${linkedinSrc}" alt="LinkedIn" style="height:20px;"> <img src="${webSrc}" alt="Web" style="height:20px;"> <a href="https://${website}">${website}</a></p>
+                    <img src="assets/Footer.png" alt="Footer" style="height:50px;"><br>
+                    <p>We Serve. We Innovate. We Empower.</p>
+                </div>
+            `;
+            document.getElementById('signature-container').innerHTML = signatureHTML;
+
+            const blob = new Blob([signatureHTML], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.getElementById('download-link');
+            downloadLink.href = url;
+            downloadLink.style.display = 'inline';
+        }
+
+        function toggleMode() {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode');
+            generateSignature();
+        }
+    </script>
+</body>
+</html>
