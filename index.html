@@ -37,13 +37,14 @@
         .header {
             display: flex;
             align-items: flex-start;
+            margin-bottom: 10px; /* Add space between header and content */
         }
         .header .logo {
             flex-shrink: 0;
             margin-right: 10px;
         }
         .header img {
-            height: 100px; /* Adjust height as needed */
+            height: 120px; /* Increase height to fill space better */
         }
         .content {
             flex-grow: 1;
@@ -86,16 +87,16 @@
         .footer {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Align footer to the left */
             width: 100%;
             margin-top: 10px;
         }
         .footer img {
-            width: 100%; /* Ensure the footer image covers the full width */
+            width: 80%; /* Ensure the footer image covers the full width */
             height: auto;
         }
         .footer-text {
-            text-align: center;
+            text-align: left; /* Align text to the left */
             font-size: 24px; /* Font size H1 */
             margin-top: 10px;
             width: 100%; /* Ensure the footer text covers the full width */
