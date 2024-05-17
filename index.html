@@ -71,8 +71,11 @@
             margin: 5px 0;
             font-size: 16px; /* Font size H3 */
         }
+        .phone-number {
+            font-weight: normal;
+        }
         .icons img {
-            height: 20px;
+            height: 30px; /* Larger icons */
             margin-right: 10px;
         }
         .icons a {
@@ -88,7 +91,7 @@
             margin-top: 10px;
         }
         .footer img {
-            width: 100%;
+            width: 80%; /* Smaller footer banner */
             height: auto;
         }
         .footer-text {
@@ -153,7 +156,7 @@
                             <h1>${fname} ${lname}</h1>
                             <h3>${title}</h3>
                             ${pronounsHTML}
-                            <h3>${phone}</h3>
+                            <h3 class="phone-number">${phone}</h3>
                             <div class="icons">
                                 <a href="${linkedInURL}" target="_blank"><img src="${linkedinSrc}" alt="LinkedIn"></a> 
                                 <a href="https://www.${website}" target="_blank"><img src="${webSrc}" alt="Web"></a> 
