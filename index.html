@@ -31,6 +31,11 @@
             display: none;
             margin-top: 10px;
         }
+        #generated-html {
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+        }
         .signature img {
             vertical-align: middle;
         }
@@ -131,6 +136,7 @@
     <a id="download-link" download="signature.html">Download Signature</a>
     
     <div id="signature-container"></div>
+    <textarea id="generated-html" readonly></textarea>
 
     <script>
         let isDarkMode = false;
@@ -195,6 +201,9 @@
                 </div>
             `;
             document.getElementById('signature-container').innerHTML = signatureHTML;
+
+            // Display generated HTML in the textarea
+            document.getElementById('generated-html').value = signatureHTML;
 
             const blob = new Blob([signatureHTML], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
