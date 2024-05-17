@@ -36,17 +36,17 @@
         }
         .header {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
         }
         .header .logo {
-            flex: 1;
+            flex-shrink: 0;
             margin-right: 10px;
         }
         .header img {
             height: 100px; /* Adjust height as needed */
         }
         .content {
-            flex: 3;
+            flex-grow: 1;
         }
         .content h1 {
             font-size: 24px;
@@ -85,13 +85,13 @@
         }
         .footer {
             display: flex;
-            align-items: left;
-            justify-content: left;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             margin-top: 10px;
         }
         .footer img {
-            width: 75%; /* Smaller footer banner */
+            width: 100%; /* Ensure the footer image covers the full width */
             height: auto;
         }
         .footer-text {
