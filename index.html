@@ -87,19 +87,19 @@
         .footer {
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Align footer to the left */
+            justify-content: center; /* Center footer content */
             width: 100%;
+            flex-direction: column;
             margin-top: 10px;
         }
         .footer img {
-            width: 80%; /* Ensure the footer image covers the full width */
+            width: 100%; /* Ensure the footer image covers the full width */
             height: auto;
         }
         .footer-text {
-            text-align: left; /* Align text to the left */
+            text-align: center; /* Center text */
             font-size: 24px; /* Font size H1 */
             margin-top: 10px;
-            width: 100%; /* Ensure the footer text covers the full width */
         }
     </style>
 </head>
@@ -168,9 +168,9 @@
                     </div>
                     <div class="footer">
                         <img src="https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/Footer.png" alt="Footer">
-                    </div>
-                    <div class="footer-text">
-                        We Serve. We Innovate. We Empower.
+                        <div class="footer-text">
+                            We Serve. We Innovate. We Empower.
+                        </div>
                     </div>
                 </div>
             `;
