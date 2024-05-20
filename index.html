@@ -95,15 +95,15 @@
             font-family: Arial, sans-serif;
         }
         .button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px 20px;
             background-color: #113213f;
             color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
             margin: 10px 0;
+            display: inline-block;
         }
         table {
             width: 100%;
@@ -147,7 +147,7 @@
     </div>
     <button class="button" onclick="generateSignature()">Generate Signature</button>
     <a id="download-link" class="button" download="signature.html">
-        <img src="https://github.com/patxg/email-signature-generator/blob/main/assets/Download_Button.png?raw=true" alt="Download Button">
+        <img src="https://github.com/patxg/email-signature-generator/blob/main/assets/Download_Button.png?raw=true" alt="Download Button" style="vertical-align: middle;">
     </a>
     
     <div id="signature-container" class="signature"></div>
