@@ -36,6 +36,7 @@
         }
         .content {
             flex-grow: 1;
+            padding-left: 10px; /* Space between logo and text */
         }
         .content h1 {
             font-size: 24px;
@@ -95,13 +96,13 @@
             font-family: Arial, sans-serif;
         }
         .button {
-            background-color: #327391; /* Updated color */
+            background-color: #00A86B; /* Updated color */
             color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            font-size: 14px;
-            border-radius: 2px;
+            font-size: 16px;
+            border-radius: 5px;
             margin: 10px 0;
             display: inline-block;
         }
@@ -113,6 +114,18 @@
         td {
             padding: 0;
             text-align: center; /* Center the contents of the cells */
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -199,7 +212,7 @@
                 `;
             } else {
                 nameRowHTML = `
-                    <td style="font-size: 24px; font-weight: bold;" colspan="2">${fname} ${lname}</td>
+                    <td style="font-size: 24px; font-weight: bold;" colspan="3">${fname} ${lname}</td>
                 `;
             }
 
@@ -239,6 +252,7 @@
                         }
                         .content {
                             flex-grow: 1;
+                            padding-left: 10px; /* Space between logo and text */
                         }
                         .content h1 {
                             font-size: 24px;
@@ -304,7 +318,7 @@
                         }
                         td {
                             padding: 0;
-                            text-align: center; /* Center the contents of the cells */
+                            text-align: left; /* Left-align the contents of the cells */
                         }
                     </style>
                 </head>
