@@ -98,6 +98,12 @@
             background: none;
             border: none;
             cursor: pointer;
+            padding: 10px 20px;
+            background-color: #113213f;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px 0;
         }
         table {
             width: 100%;
@@ -111,7 +117,10 @@
     </style>
 </head>
 <body>
-    <h1>Email Signature Generator</h1>
+    <div style="display: flex; align-items: center;">
+        <img src="https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/logo.png?raw=true" alt="Logo" style="width: 50px; margin-right: 10px;">
+        <h1>Email Signature Generator</h1>
+    </div>
     <div class="form-group">
         <label for="fname">First Name</label>
         <input type="text" id="fname">
@@ -142,7 +151,6 @@
     </a>
     
     <div id="signature-container" class="signature"></div>
-    <textarea id="generated-html" readonly></textarea>
 
     <script>
         const website = "ReefPointGroup.com";
@@ -289,6 +297,15 @@
                             color: #113213f;
                             font-family: Arial, sans-serif;
                         }
+                        table {
+                            width: 100%;
+                            border-spacing: 0;
+                            border-collapse: collapse;
+                        }
+                        td {
+                            padding: 0;
+                            text-align: center; /* Center the contents of the cells */
+                        }
                     </style>
                 </head>
                 <body>
@@ -368,9 +385,6 @@
                     </table>
                 </div>
             `;
-
-            // Display generated HTML in the textarea
-            document.getElementById('generated-html').value = signatureHTML;
 
             const blob = new Blob([signatureHTML], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
