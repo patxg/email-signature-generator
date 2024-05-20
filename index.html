@@ -29,7 +29,7 @@
         }
         .header .logo {
             flex-shrink: 0;
-            margin-right: 10px;
+            text-align: center; /* Center the logo */
         }
         .header img {
             width: 100px; /* Adjusted for better spacing */
@@ -106,6 +106,7 @@
         }
         td {
             padding: 0;
+            text-align: center; /* Center the contents of the cells */
         }
     </style>
 </head>
@@ -181,6 +182,19 @@
             const logoSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/logo.png?raw=true';
             const footerSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/Footer.png?raw=true';
 
+            let nameRowHTML;
+            if (mname) {
+                nameRowHTML = `
+                    <td style="font-size: 24px; font-weight: bold;">${fname}</td>
+                    <td style="font-size: 24px; font-weight: bold; text-align: left;">${mname}</td>
+                    <td style="font-size: 24px; font-weight: bold;">${lname}</td>
+                `;
+            } else {
+                nameRowHTML = `
+                    <td style="font-size: 24px; font-weight: bold;" colspan="2">${fname} ${lname}</td>
+                `;
+            }
+
             const signatureHTML = `
                 <html>
                 <head>
@@ -210,7 +224,7 @@
                         }
                         .header .logo {
                             flex-shrink: 0;
-                            margin-right: 10px;
+                            text-align: center; /* Center the logo */
                         }
                         .header img {
                             width: 100px; /* Adjusted for better spacing */
@@ -281,12 +295,10 @@
                     <div class="signature">
                         <table>
                             <tr>
-                                <td rowspan="4" style="padding-right: 10px;">
+                                <td rowspan="4" style="padding-right: 10px; text-align: center;">
                                     <img src="${logoSrc}" alt="Company Logo">
                                 </td>
-                                <td style="font-size: 24px; font-weight: bold;">${fname}</td>
-                                <td style="font-size: 24px; font-weight: bold; text-align: left;">${mname}</td>
-                                <td style="font-size: 24px; font-weight: bold;">${lname}</td>
+                                ${nameRowHTML}
                             </tr>
                             <tr>
                                 <td colspan="3" style="font-size: 16px; font-style: italic;">${title}</td>
@@ -323,12 +335,10 @@
                 <div class="signature">
                     <table>
                         <tr>
-                            <td rowspan="4" style="padding-right: 10px;">
+                            <td rowspan="4" style="padding-right: 10px; text-align: center;">
                                 <img src="${logoSrc}" alt="Company Logo">
                             </td>
-                            <td style="font-size: 24px; font-weight: bold;">${fname}</td>
-                            <td style="font-size: 24px; font-weight: bold; text-align: left;">${mname}</td>
-                            <td style="font-size: 24px; font-weight: bold;">${lname}</td>
+                            ${nameRowHTML}
                         </tr>
                         <tr>
                             <td colspan="3" style="font-size: 16px; font-style: italic;">${title}</td>
