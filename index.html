@@ -40,6 +40,7 @@
             margin: 0;
             color: #113213f;
             font-family: Arial, sans-serif;
+            font-weight: bold;
         }
         .content h3, .content p {
             font-size: 16px;
@@ -53,13 +54,10 @@
         .content h3.italic {
             font-style: italic;
         }
-        .contact-info {
-            margin-top: 5px; /* Reduced spacing */
-        }
         .icons {
             display: flex;
             align-items: center;
-            margin-top: 5px; /* Reduced spacing */
+            margin-top: 5px; /* Add space between icons and text */
         }
         .icons img {
             height: 20px; /* Adjust icon size */
@@ -139,7 +137,7 @@
         <img src="https://github.com/patxg/email-signature-generator/blob/main/assets/Download_Button.png?raw=true" alt="Download Button">
     </a>
     
-    <div id="signature-container"></div>
+    <div id="signature-container" class="signature"></div>
     <textarea id="generated-html" readonly></textarea>
 
     <script>
