@@ -14,7 +14,8 @@
             padding: 10px;
             width: 700px; /* Adjust width as needed */
             background-color: #fff;
-            color: #000;
+            color: #113213f;
+            font-family: Arial, sans-serif;
         }
         .signature img {
             vertical-align: middle;
@@ -22,7 +23,7 @@
         .header {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 10px; /* Add space between header and content */
+            margin-bottom: 5px; /* Add space between header and content */
         }
         .header .logo {
             flex-shrink: 0;
@@ -37,22 +38,28 @@
         .content h1 {
             font-size: 24px;
             margin: 0;
+            color: #113213f;
+            font-family: Arial, sans-serif;
         }
         .content h3, .content p {
             font-size: 16px;
-            margin: 5px 0; /* Add space between title, pronouns, and phone number */
+            margin: 0; /* Remove vertical margin for tighter spacing */
+            color: #113213f;
+            font-family: Arial, sans-serif;
+        }
+        .content h3.bold {
+            font-weight: bold;
+        }
+        .content h3.italic {
+            font-style: italic;
         }
         .contact-info {
-            margin-top: 10px;
-        }
-        .contact-info p {
-            margin: 5px 0;
-            font-size: 16px; /* Font size H3 */
+            margin-top: 5px; /* Reduced spacing */
         }
         .icons {
             display: flex;
             align-items: center;
-            margin-top: 10px; /* Add space between icons and text */
+            margin-top: 5px; /* Reduced spacing */
         }
         .icons img {
             height: 20px; /* Adjust icon size */
@@ -63,6 +70,8 @@
             text-decoration: none;
             font-size: 16px; /* Font size H3 */
             margin-right: 10px; /* Spacing between icons */
+            color: #113213f;
+            font-family: Arial, sans-serif;
         }
         .footer {
             display: flex;
@@ -70,7 +79,7 @@
             justify-content: center; /* Center footer content */
             width: 100%;
             flex-direction: column;
-            margin-top: 10px;
+            margin-top: 5px; /* Reduced spacing */
         }
         .footer img {
             width: 100%; /* Ensure the footer image covers the full width */
@@ -79,12 +88,23 @@
         .footer-text {
             text-align: center; /* Center text */
             font-size: 16px; /* Font size for footer text */
-            margin-top: 10px;
+            margin-top: 5px; /* Reduced spacing */
+            font-weight: bold;
+            color: #113213f;
+            font-family: Arial, sans-serif;
         }
         .button {
             background: none;
             border: none;
             cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 0;
         }
     </style>
 </head>
@@ -167,13 +187,15 @@
                     <style>
                         body {
                             font-family: Arial, sans-serif;
+                            color: #113213f;
                         }
                         .signature {
                             border: 1px solid #000;
                             padding: 10px;
                             width: 700px; /* Adjust width as needed */
                             background-color: #fff;
-                            color: #000;
+                            color: #113213f;
+                            font-family: Arial, sans-serif;
                         }
                         .signature img {
                             vertical-align: middle;
@@ -181,7 +203,7 @@
                         .header {
                             display: flex;
                             align-items: flex-start;
-                            margin-bottom: 10px; /* Add space between header and content */
+                            margin-bottom: 5px; /* Add space between header and content */
                         }
                         .header .logo {
                             flex-shrink: 0;
@@ -196,15 +218,26 @@
                         .content h1 {
                             font-size: 24px;
                             margin: 0;
+                            color: #113213f;
+                            font-family: Arial, sans-serif;
+                            font-weight: bold;
                         }
                         .content h3, .content p {
                             font-size: 16px;
-                            margin: 5px 0; /* Add space between title, pronouns, and phone number */
+                            margin: 0; /* Remove vertical margin for tighter spacing */
+                            color: #113213f;
+                            font-family: Arial, sans-serif;
+                        }
+                        .content h3.bold {
+                            font-weight: bold;
+                        }
+                        .content h3.italic {
+                            font-style: italic;
                         }
                         .icons {
                             display: flex;
                             align-items: center;
-                            margin-top: 10px; /* Add space between icons and text */
+                            margin-top: 5px; /* Add space between icons and text */
                         }
                         .icons img {
                             height: 20px; /* Adjust icon size */
@@ -215,6 +248,8 @@
                             text-decoration: none;
                             font-size: 16px; /* Font size H3 */
                             margin-right: 10px; /* Spacing between icons */
+                            color: #113213f;
+                            font-family: Arial, sans-serif;
                         }
                         .footer {
                             display: flex;
@@ -222,7 +257,7 @@
                             justify-content: center; /* Center footer content */
                             width: 100%;
                             flex-direction: column;
-                            margin-top: 10px;
+                            margin-top: 5px; /* Reduced spacing */
                         }
                         .footer img {
                             width: 100%; /* Ensure the footer image covers the full width */
@@ -231,7 +266,10 @@
                         .footer-text {
                             text-align: center; /* Center text */
                             font-size: 16px; /* Font size for footer text */
-                            margin-top: 10px;
+                            margin-top: 5px; /* Reduced spacing */
+                            font-weight: bold;
+                            color: #113213f;
+                            font-family: Arial, sans-serif;
                         }
                     </style>
                 </head>
@@ -247,7 +285,7 @@
                                 <td style="font-size: 24px; font-weight: bold;">${lname}</td>
                             </tr>
                             <tr>
-                                <td colspan="3" style="font-size: 16px;">${title}</td>
+                                <td colspan="3" style="font-size: 16px; font-style: italic;">${title}</td>
                             </tr>
                             <tr>
                                 <td colspan="3" style="font-size: 16px;">${phone}</td>
@@ -267,7 +305,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="4" style="text-align: center; font-size: 16px; margin-top: 10px;">
+                                <td colspan="4" style="text-align: center; font-size: 16px; margin-top: 5px; font-weight: bold;">
                                     We Serve. We Innovate. We Empower.
                                 </td>
                             </tr>
