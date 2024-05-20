@@ -29,7 +29,7 @@
             margin-right: 10px;
         }
         .header img {
-            height: 120px; /* Adjusted for better spacing */
+            height: 100px; /* Adjusted for better spacing */
         }
         .content {
             flex-grow: 1;
@@ -38,13 +38,9 @@
             font-size: 24px;
             margin: 0;
         }
-        .content h3, .content h4 {
+        .content h3, .content p {
             font-size: 16px;
             margin: 5px 0; /* Add space between title, pronouns, and phone number */
-        }
-        .content h2 {
-            font-size: 18px;
-            margin: 0;
         }
         .contact-info {
             margin-top: 10px;
@@ -53,9 +49,6 @@
             margin: 5px 0;
             font-size: 16px; /* Font size H3 */
         }
-        .phone-number {
-            font-weight: normal;
-        }
         .icons {
             display: flex;
             align-items: center;
@@ -63,12 +56,13 @@
         }
         .icons img {
             height: 20px; /* Adjust icon size */
-            margin-right: 10px;
+            margin-right: 5px;
         }
         .icons a {
             color: inherit;
             text-decoration: none;
-            font-size: 18px; /* Font size H2 */
+            font-size: 16px; /* Font size H3 */
+            margin-right: 10px; /* Spacing between icons */
         }
         .footer {
             display: flex;
@@ -154,23 +148,93 @@
             const pronouns = document.getElementById('pronouns').value;
             const phone = document.getElementById('phone').value;
 
-            const pronounsHTML = pronouns ? `<div style="font-family: Arial, Helvetica, sans-serif; font-size: 11pt;">${pronouns}</div>` : '';
+            const pronounsHTML = pronouns ? `<p>${pronouns}</p>` : '';
 
-            const linkedinSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/linkedin.png';
-            const webSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/web.png';
-            const logoSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/logo.png';
-            const footerSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/Footer.png';
+            const linkedinSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/linkedin.png?raw=true';
+            const webSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/web.png?raw=true';
+            const logoSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/logo.png?raw=true';
+            const footerSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/Footer.png?raw=true';
 
             const signatureHTML = `
                 <html>
                 <head>
                     <title>Email Signature</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                        }
+                        .signature {
+                            border: 1px solid #000;
+                            padding: 10px;
+                            width: 700px; /* Adjust width as needed */
+                            background-color: #fff;
+                            color: #000;
+                        }
+                        .signature img {
+                            vertical-align: middle;
+                        }
+                        .header {
+                            display: flex;
+                            align-items: flex-start;
+                            margin-bottom: 10px; /* Add space between header and content */
+                        }
+                        .header .logo {
+                            flex-shrink: 0;
+                            margin-right: 10px;
+                        }
+                        .header img {
+                            height: 100px; /* Adjusted for better spacing */
+                        }
+                        .content {
+                            flex-grow: 1;
+                        }
+                        .content h1 {
+                            font-size: 24px;
+                            margin: 0;
+                        }
+                        .content h3, .content p {
+                            font-size: 16px;
+                            margin: 5px 0; /* Add space between title, pronouns, and phone number */
+                        }
+                        .icons {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 10px; /* Add space between icons and text */
+                        }
+                        .icons img {
+                            height: 20px; /* Adjust icon size */
+                            margin-right: 5px;
+                        }
+                        .icons a {
+                            color: inherit;
+                            text-decoration: none;
+                            font-size: 16px; /* Font size H3 */
+                            margin-right: 10px; /* Spacing between icons */
+                        }
+                        .footer {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center; /* Center footer content */
+                            width: 100%;
+                            flex-direction: column;
+                            margin-top: 10px;
+                        }
+                        .footer img {
+                            width: 100%; /* Ensure the footer image covers the full width */
+                            height: auto;
+                        }
+                        .footer-text {
+                            text-align: center; /* Center text */
+                            font-size: 16px; /* Font size for footer text */
+                            margin-top: 10px;
+                        }
+                    </style>
                 </head>
                 <body>
                     <div class="signature">
                         <header class="header">
                             <div class="logo">
-                                <img src="${logoSrc}" alt="Company Logo" width="100">
+                                <img src="${logoSrc}" alt="Company Logo">
                             </div>
                             <div class="content">
                                 <h1>${fname} ${lname}</h1>
@@ -178,14 +242,14 @@
                                 ${pronounsHTML}
                                 <h3 class="phone-number">${phone}</h3>
                                 <div class="icons">
-                                    <a href="${linkedInURL}" target="_blank"><img src="${linkedinSrc}" alt="LinkedIn" width="20"></a> 
-                                    <a href="https://www.${website}" target="_blank"><img src="${webSrc}" alt="Web" width="20"></a> 
+                                    <a href="${linkedInURL}" target="_blank"><img src="${linkedinSrc}" alt="LinkedIn"></a> 
+                                    <a href="https://www.${website}" target="_blank"><img src="${webSrc}" alt="Web"></a> 
                                     <a href="https://${website}" target="_blank" style="color: inherit; text-decoration: none; font-size: 18px;">${website}</a>
                                 </div>
                             </div>
                         </header>
                         <footer class="footer">
-                            <img src="${footerSrc}" alt="Footer" width="600">
+                            <img src="${footerSrc}" alt="Footer">
                             <div class="footer-text">
                                 We Serve. We Innovate. We Empower.
                             </div>
