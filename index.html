@@ -95,6 +95,10 @@
         <input type="text" id="fname">
     </div>
     <div class="form-group">
+        <label for="mname">Middle Initial</label>
+        <input type="text" id="mname" maxlength="1">
+    </div>
+    <div class="form-group">
         <label for="lname">Last Name</label>
         <input type="text" id="lname">
     </div>
@@ -143,6 +147,7 @@
 
         function generateSignature() {
             const fname = document.getElementById('fname').value;
+            const mname = document.getElementById('mname').value;
             const lname = document.getElementById('lname').value;
             const title = document.getElementById('title').value;
             const pronouns = document.getElementById('pronouns').value;
@@ -232,28 +237,41 @@
                 </head>
                 <body>
                     <div class="signature">
-                        <header class="header">
-                            <div class="logo">
-                                <img src="${logoSrc}" alt="Company Logo">
-                            </div>
-                            <div class="content">
-                                <h1>${fname} ${lname}</h1>
-                                <h3>${title}</h3>
-                                ${pronounsHTML}
-                                <h3 class="phone-number">${phone}</h3>
-                                <div class="icons">
-                                    <a href="${linkedInURL}" target="_blank"><img src="${linkedinSrc}" alt="LinkedIn"></a> 
-                                    <a href="https://www.${website}" target="_blank"><img src="${webSrc}" alt="Web"></a> 
-                                    <a href="https://${website}" target="_blank" style="color: inherit; text-decoration: none; font-size: 18px;">${website}</a>
-                                </div>
-                            </div>
-                        </header>
-                        <footer class="footer">
-                            <img src="${footerSrc}" alt="Footer">
-                            <div class="footer-text">
-                                We Serve. We Innovate. We Empower.
-                            </div>
-                        </footer>
+                        <table>
+                            <tr>
+                                <td rowspan="4" style="padding-right: 10px;">
+                                    <img src="${logoSrc}" alt="Company Logo" width="100">
+                                </td>
+                                <td style="font-size: 24px; font-weight: bold;">${fname}</td>
+                                <td style="font-size: 24px; font-weight: bold;">${mname}</td>
+                                <td style="font-size: 24px; font-weight: bold;">${lname}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="font-size: 16px;">${title}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="font-size: 16px;">${phone}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="icons">
+                                        <a href="${linkedInURL}" target="_blank"><img src="${linkedinSrc}" alt="LinkedIn"></a> 
+                                        <a href="https://${website}" target="_blank"><img src="${webSrc}" alt="Web"></a> 
+                                        <a href="https://${website}" target="_blank" style="color: inherit; text-decoration: none;">${website}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <img src="${footerSrc}" alt="Footer" style="width: 100%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align: center; font-size: 16px; margin-top: 10px;">
+                                    We Serve. We Innovate. We Empower.
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </body>
                 </html>
