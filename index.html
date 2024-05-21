@@ -113,7 +113,7 @@
         }
         td {
             padding: 0;
-            text-align: center; /* Center the contents of the cells */
+            text-align: left; /* Left-align the contents of the cells */
         }
         .form-group {
             margin-bottom: 10px;
@@ -137,10 +137,6 @@
     <div class="form-group">
         <label for="fname">First Name</label>
         <input type="text" id="fname">
-    </div>
-    <div class="form-group">
-        <label for="mname">Middle Initial</label>
-        <input type="text" id="mname" maxlength="1">
     </div>
     <div class="form-group">
         <label for="lname">Last Name</label>
@@ -190,7 +186,6 @@
 
         function generateSignature() {
             const fname = document.getElementById('fname').value;
-            const mname = document.getElementById('mname').value;
             const lname = document.getElementById('lname').value;
             const title = document.getElementById('title').value;
             const pronouns = document.getElementById('pronouns').value;
@@ -202,19 +197,6 @@
             const webSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/web.png?raw=true';
             const logoSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/logo.png?raw=true';
             const footerSrc = 'https://raw.githubusercontent.com/patxg/email-signature-generator/main/assets/Footer.png?raw=true';
-
-            let nameRowHTML;
-            if (mname) {
-                nameRowHTML = `
-                    <td style="font-size: 24px; font-weight: bold;">${fname}</td>
-                    <td style="font-size: 24px; font-weight: bold; text-align: left;">${mname}</td>
-                    <td style="font-size: 24px; font-weight: bold;">${lname}</td>
-                `;
-            } else {
-                nameRowHTML = `
-                    <td style="font-size: 24px; font-weight: bold;" colspan="3">${fname} ${lname}</td>
-                `;
-            }
 
             const signatureHTML = `
                 <html>
@@ -329,7 +311,7 @@
                                 <td rowspan="4" style="padding-right: 10px; text-align: center;">
                                     <img src="${logoSrc}" alt="Company Logo">
                                 </td>
-                                ${nameRowHTML}
+                                <td style="font-size: 24px; font-weight: bold;" colspan="3">${fname} ${lname}</td>
                             </tr>
                             <tr>
                                 <td colspan="3" style="font-size: 16px; font-style: italic;">${title}</td>
@@ -369,7 +351,7 @@
                             <td rowspan="4" style="padding-right: 10px; text-align: center;">
                                 <img src="${logoSrc}" alt="Company Logo">
                             </td>
-                            ${nameRowHTML}
+                            <td style="font-size: 24px; font-weight: bold;" colspan="3">${fname} ${lname}</td>
                         </tr>
                         <tr>
                             <td colspan="3" style="font-size: 16px; font-style: italic;">${title}</td>
