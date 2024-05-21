@@ -103,7 +103,7 @@
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
-            margin: 10px 0;
+            margin: 10px 10px 10px 0;
             display: inline-block;
         }
         table {
@@ -151,6 +151,7 @@
         <input type="text" id="phone" maxlength="12" oninput="formatPhoneNumber(this)">
     </div>
     <button class="button" onclick="generateSignature()">Generate Signature</button>
+    <button class="button" onclick="resetForm()" style="background-color: #ff0000;">Reset</button>
     <a id="download-link" class="button" download="signature.html">
         <img src="https://github.com/patxg/email-signature-generator/blob/main/assets/Download_Button.png?raw=true" alt="Download Button" style="vertical-align: middle;">
     </a>
@@ -380,6 +381,16 @@
             const downloadLink = document.getElementById('download-link');
             downloadLink.href = url;
             downloadLink.style.display = 'inline';
+        }
+
+        function resetForm() {
+            document.getElementById('fname').value = '';
+            document.getElementById('lname').value = '';
+            document.getElementById('title').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('signature-container').innerHTML = '';
+            const downloadLink = document.getElementById('download-link');
+            downloadLink.style.display = 'none';
         }
     </script>
 </body>
